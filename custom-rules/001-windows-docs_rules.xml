@@ -1,0 +1,28 @@
+<group name="sysmon,">
+
+  <rule id="100001" level="10">
+    <if_sid>6</if_sid>
+    <field name="win.eventdata.TargetFilename">C:\\Users\\.*\\Documents</field>
+    <description>High Priority: Modification detected in user's Documents folder - Windows FIM</description>
+    <options>no_email_alert</options>
+    <group>fim,pci_dss_11.5,gpg13_4.13,gdpr_II_5.1.f,nist_800_53_SI.7,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+  </rule>
+
+  <rule id="100002" level="10">
+    <if_sid>2</if_sid>
+    <field name="win.eventdata.TargetFilename">C:\\Users\\.*\\Documents</field>
+    <description>High Priority: File creation detected in user's Documents folder - Windows FIM</description>
+    <options>no_email_alert</options>
+    <group>fim,pci_dss_11.5,gpg13_4.13,gdpr_II_5.1.f,nist_800_53_SI.7,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+  </rule>
+
+  <rule id="100003" level="10">
+    <if_sid>2</if_sid>
+    <field name="win.eventdata.TargetFilename">C:\\Users\\.*\\Documents</field>
+    <field name="win.eventdata.FileOpenName">C:\\Users\\.*\\Documents</field>
+    <description>High Priority: File deletion detected in user's Documents folder - Windows FIM</description>
+    <options>no_email_alert</options>
+    <group>fim,pci_dss_11.5,gpg13_4.13,gdpr_II_5.1.f,nist_800_53_SI.7,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+  </rule>
+
+</group>

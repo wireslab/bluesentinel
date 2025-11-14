@@ -1,0 +1,29 @@
+<group name="web,wordpress,">
+
+  <rule id="200001" level="12">
+    <if_sid>31100</if_sid>
+    <field name="location">/wp-login.php</field>
+    <field name="method">POST</field>
+    <field name="status">401</field>
+    <description>Critical: WordPress login attempt failed</description>
+    <group>pci_dss_10.2.4,pci_dss_10.2.5,pci_dss_11.4,gdpr_IV_35.7.d,gdpr_IV_32.2,nist_800_53_AU.14,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+  </rule>
+
+  <rule id="200002" level="12">
+    <if_sid>31100</if_sid>
+    <field name="url">.*wp-login\.php.*login.*</field>
+    <field name="method">POST</field>
+    <description>Critical: WordPress authentication failed</description>
+    <group>pci_dss_10.2.4,pci_dss_10.2.5,pci_dss_11.4,gdpr_IV_35.7.d,gdpr_IV_32.2,nist_800_53_AU.14,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+  </rule>
+
+  <rule id="200003" level="12">
+    <if_sid>31100</if_sid>
+    <field name="url">.*wp-login\.php.*</field>
+    <field name="data">.*log=.*</field>
+    <field name="status">401,403</field>
+    <description>Critical: Unauthorized access attempt to WordPress login</description>
+    <group>pci_dss_10.2.4,pci_dss_10.2.5,pci_dss_11.4,gdpr_IV_35.7.d,gdpr_IV_32.2,nist_800_53_AU.14,nist_800_53_SI.4,tsc_CC6.1,tsc_CC6.8,tsc_CC7.2,tsc_CC7.3,</group>
+  </rule>
+
+</group>
